@@ -1,6 +1,6 @@
-writeoutput("INSERT into BOOKS (isbn13,title) VALUES ('#formData.isbn13#,#formData.title#'))
 <cftry>
-    <cfset addEditFunctions = createObject("addedit")>
+    <cfset addEditFunctions = createObject("addedit") />
+    <cfset addEditFunctions.processForms(form)>
     <div class="row">
         <div id="main" class="col-9">
             <cfoutput>#mainForm()#</cfoutput>
@@ -12,12 +12,11 @@ writeoutput("INSERT into BOOKS (isbn13,title) VALUES ('#formData.isbn13#,#formDa
     </div>
     <cfcatch type="any">
         <cfoutput>
-            #cfcatch.Message#
+            #cfcatch#
         </cfoutput>
     </cfcatch>
 </cftry>
-<cfdump var="#form#">
-<cfset addEditFunctions.processForms(form)>
+
 <cffunction name="mainForm">
     <cfoutput>
         <form action="#cgi.script_name#?tool=addedit" method="post">
