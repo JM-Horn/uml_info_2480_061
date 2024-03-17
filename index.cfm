@@ -10,6 +10,7 @@
     </head>
 <body>
     <cfparam name="p" default="carousel" />
+    <cfinclude template="stateInfo.cfm" />
     <cfset bookstoreFunctions = createObject("bookstore") />
 <div id="wrapper" class="container">
     <cfinclude template="header.cfm" />

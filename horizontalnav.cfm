@@ -28,5 +28,28 @@
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </cfoutput>
+        <cfoutput>
+            <cfif session.user.isloggedin>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a>Welcome #session.user.firstname#</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#cgi.script_name#?p=logoff ">logout</a>
+                    </li>
+                    <cfif session.user.isadmin>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#cgi.script_name#?p=management ">Management</a>
+                        </li>
+                    </cfif>
+                </ul>
+            <cfelse>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#cgi.script_name#?p=login">Login</a>
+                    </li>
+                </ul>
+            </cfif>
+        </cfoutput>
     </div>
 </nav>
