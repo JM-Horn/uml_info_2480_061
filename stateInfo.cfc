@@ -1,6 +1,6 @@
 component {
     function obtainUser(
-        isLoggedIn = false,
+        isLoggedIn =false,
         firstname="",
         lastname="",
         email="",
@@ -73,9 +73,9 @@ component {
 
     function logMeIn(username, password){
         var qs = new query(datasource=application.dsource);
-        qs.setSql("select * from people inner join passwords on people.id=passwords.personid where email=:email and password=:password");
+        qs.setSql("select * from people inner join passwords on people.id=passwords.personid where people.email=:email and passwords.password=:password");
         qs.addParam(name="email", value=arguments.username);
-        qs.addParam(name="password", value=hash(form.loginpass, "SHA-512"));
+        qs.addParam(name="password", value=hash(arguments.password, "SHA-512"));
         return qs.execute().getResult();
     }
 }

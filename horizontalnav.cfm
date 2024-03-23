@@ -35,11 +35,11 @@
                         <a>Welcome #session.user.firstname#</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#cgi.script_name#?p=logoff ">logout</a>
+                        <a class="nav-link" href="#cgi.script_name#?p=logoff ">Logout </a>
                     </li>
                     <cfif session.user.isadmin>
                         <li class="nav-item active">
-                            <a class="nav-link" href="#cgi.script_name#?p=management ">Management</a>
+                            <a class="nav-link" href="#cgi.script_name#?p=management ">Management </a>
                         </li>
                     </cfif>
                 </ul>
