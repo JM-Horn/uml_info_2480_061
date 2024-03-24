@@ -37,11 +37,6 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="#cgi.script_name#?p=logoff ">Logout </a>
                     </li>
-                    <cfif session.user.isadmin>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#cgi.script_name#?p=management ">Management </a>
-                        </li>
-                    </cfif>
                 </ul>
             <cfelse>
                 <ul class="navbar-nav mr-auto">

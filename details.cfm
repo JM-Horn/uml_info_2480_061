@@ -1,7 +1,8 @@
 <cfparam name="searchme" default="" />
+<cfparam name="genre" default="" />
 
 <cfoutput>
-    <cfset bookInfo=bookstoreFunctions.obtainSearchResults( searchme ) />
+    <cfset bookInfo=bookstoreFunctions.obtainSearchResults( searchme, genre ) />
 
     <cfif bookinfo.recordcount == 0>
         #noResults()#
@@ -11,7 +12,6 @@
         #manyResults()#
     </cfif>
 
-    <cfdump var="#bookInfo#" />
 </cfoutput>
 
 <cffunction name="noResults">
@@ -33,6 +33,13 @@
     </cfoutput>
 </cffunction>
 <cffunction name="manyResults">
+    <div>
+        <h3>
+            <cfoutput>
+                #bookstoreFunctions.resultsHeader(searchme, genre)#
+            </cfoutput>
+        </h3>
+    </div>
     <div>
         <div>
             <ol class="nav flex-column">

@@ -3,6 +3,7 @@
 <cftry>
     <cfset addEditFunctions = createObject("addedit") />
     <cfset addEditFunctions.processForms(form)>
+    
     <div class="row">
         <div id="main" class="col-9">
             <cfif book neq "">
@@ -26,8 +27,11 @@
         Please choose a book from the left hand side.
     <cfelse>
 
-        <cfset allPublishers = addEditFunctions.allPublishers()>
-        <cfset var thisBookDetails= addEditFunctions.bookDetails(book)>
+        <cfset var allPublishers = addEditFunctions.allPublishers()>
+        <cfset var thisBookDetails = addEditFunctions.bookDetails(book)>
+        <cfset var allGenres = addEditFunctions.allGenres()>
+        <cfset var bookGenres = addEditFunctions.bookGenres(book)>
+
         <cfoutput>
             <form action="#cgi.script_name#?tool=addedit&qterm=#qterm#" method="post" enctype="multipart/form-data">
                 <div class="form-floating mb-3">
@@ -89,6 +93,22 @@
                             .create(document.querySelector('##description'))
                             .catch(error => {console.dir(error)});
                     </script>
+                </div>
+                <div>
+                    <h4>Genres</h4>
+                     <cfloop query="allGenres">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="#id#" id="genre#id#" name="genre">
+                            <label class="form-check-label" for="genre#id#">
+                                #name#
+                            </label>
+                        </div>
+                    </cfloop>
+                    <cfloop query="bookGenres">
+                        <script>
+                            document.getElementById("genre#genreid#").checked=true;
+                        </script>
+                    </cfloop>
                 </div>
                 <button type="submit" class="btn btn-primary" style="width: 100%">Add Book</button>
             </form>
