@@ -10,16 +10,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/JenniferHorn/MyFinalProject/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Store Information</a>
+                <a class="nav-link" href="#cgi.script_name#?p=content&id=C183786C-C371-46F6-AB65BBB030221AEA">Store Information</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Highlighted Favorites</a>
+                <a class="nav-link" href="#cgi.script_name#?p=content&id=ED41AA47-41D7-4081-A08D2ABE730EE476">Highlighted Favorites</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Events</a>
+                <a class="nav-link" href="#cgi.script_name#?p=content&id=19596FEC-1007-4C2B-B9E20C5516B0778B">Events</a>
             </li>
         </ul>
         <cfoutput>

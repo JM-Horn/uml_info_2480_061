@@ -12,10 +12,7 @@
 
         <div class="container">
             <div id="navarea">  
-                <cfoutput>
-                    <a href="#cgi.SCRIPT_NAME#/?tool=addEdit">Book Inventory</a>
-                    <a href="#cgi.SCRIPT_NAME#/?tool=createUUIDS">Create UUIDS</a>
-                </cfoutput>
+                <cfinclude template="managementNav.cfm" />
             </div>
             <div id="mainarea">
                 <cfinclude template="#tool#.cfm" />
