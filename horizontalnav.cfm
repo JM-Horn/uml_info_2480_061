@@ -7,6 +7,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
+    <cfoutput>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
@@ -22,7 +23,6 @@
                 <a class="nav-link" href="#cgi.script_name#?p=content&id=19596FEC-1007-4C2B-B9E20C5516B0778B">Events</a>
             </li>
         </ul>
-        <cfoutput>
             <form class="d-flex" action="#cgi.script_name#?p=details" method="post">
                 <input class="form-control me-2" type="search" name="searchme" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
